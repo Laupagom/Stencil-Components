@@ -12,7 +12,7 @@ export class WebtrainingPersonalCard {
     @Prop() lastName: string = "" ;
     @Prop() photo: string = "" ;
     @Prop() resume: string = "" ;
-    @Prop() profesion: string = "";
+    @Prop() rol: string = "";
 
     render() {
         return (
@@ -28,7 +28,7 @@ export class WebtrainingPersonalCard {
                     </h2>
 
                     <h3>
-                        {this.profesion}
+                        {this.rol}
                     </h3>
 
                     <div class="b-personal-card__resume">

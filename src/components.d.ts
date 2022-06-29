@@ -24,8 +24,8 @@ export namespace Components {
         "firstName": string;
         "lastName": string;
         "photo": string;
-        "profesion": string;
         "resume": string;
+        "rol": string;
     }
 }
 declare global {
@@ -65,8 +65,8 @@ declare namespace LocalJSX {
         "firstName"?: string;
         "lastName"?: string;
         "photo"?: string;
-        "profesion"?: string;
         "resume"?: string;
+        "rol"?: string;
     }
     interface IntrinsicElements {
         "my-component": MyComponent;
