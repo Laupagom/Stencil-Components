@@ -27,6 +27,10 @@ export namespace Components {
         "resume": string;
         "rol": string;
     }
+    interface WebtrainingVideoPlayer {
+        "provider": string;
+        "source": any;
+    }
 }
 declare global {
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
@@ -41,9 +45,16 @@ declare global {
         prototype: HTMLWebtrainingPersonalCardElement;
         new (): HTMLWebtrainingPersonalCardElement;
     };
+    interface HTMLWebtrainingVideoPlayerElement extends Components.WebtrainingVideoPlayer, HTMLStencilElement {
+    }
+    var HTMLWebtrainingVideoPlayerElement: {
+        prototype: HTMLWebtrainingVideoPlayerElement;
+        new (): HTMLWebtrainingVideoPlayerElement;
+    };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
         "webtraining-personal-card": HTMLWebtrainingPersonalCardElement;
+        "webtraining-video-player": HTMLWebtrainingVideoPlayerElement;
     }
 }
 declare namespace LocalJSX {
@@ -68,9 +79,14 @@ declare namespace LocalJSX {
         "resume"?: string;
         "rol"?: string;
     }
+    interface WebtrainingVideoPlayer {
+        "provider"?: string;
+        "source"?: any;
+    }
     interface IntrinsicElements {
         "my-component": MyComponent;
         "webtraining-personal-card": WebtrainingPersonalCard;
+        "webtraining-video-player": WebtrainingVideoPlayer;
     }
 }
 export { LocalJSX as JSX };
@@ -79,6 +95,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "webtraining-personal-card": LocalJSX.WebtrainingPersonalCard & JSXBase.HTMLAttributes<HTMLWebtrainingPersonalCardElement>;
+            "webtraining-video-player": LocalJSX.WebtrainingVideoPlayer & JSXBase.HTMLAttributes<HTMLWebtrainingVideoPlayerElement>;
         }
     }
 }

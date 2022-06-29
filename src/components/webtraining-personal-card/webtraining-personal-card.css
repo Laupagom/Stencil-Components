@@ -2,11 +2,11 @@
     transition: all .3s eade-in-out;
     box-shadow: 0 0 2rem rgba(0, 0, 255, .1);
     border-radius: 1rem;
+    padding: 2rem;
 }
 
 .b-personal-card {
     background-color: #fff;
-    box-shadow: 0 2px 3px rgba(10, 10, 10, .1), 0 0 0 1px rgba(10, 10, 10, .1);
     color: #4a4a4a;
     max-width: 100%;
     position: relative;
@@ -20,14 +20,21 @@
 
 .b-personal-card__full-name {
     text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 1rem;
+    letter-spacing: 1px;
+    font-size: 2rem;
+}
+
+.b-personal-card__rol {
+    letter-spacing: 1px;
+    font-size: 1.5rem;
+    color: blue;
 }
 
 
 .b-personal-card__photo {
     border-radius: 50%;
     border: 6px solid#6e6e6e;
+    
 }
 
 .b-personal-card__resume {
