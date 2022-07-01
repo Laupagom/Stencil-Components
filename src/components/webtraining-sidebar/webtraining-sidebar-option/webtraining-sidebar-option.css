@@ -1,0 +1,18 @@
+.sidebar-option {
+    padding: 1rem;
+}
+.sidebar-option button {
+    width: 100%;
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 15px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* si mi botón tiene la clase active (en index.html) será de color blue */
+:host([active]) button {
+    background-color: blue;
+    color: white;
+}

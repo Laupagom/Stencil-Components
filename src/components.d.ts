@@ -31,6 +31,12 @@ export namespace Components {
         "resume": string;
         "rol": string;
     }
+    interface WebtrainingSidebar {
+        "open": () => Promise<void>;
+        "sidebarOpen": boolean;
+    }
+    interface WebtrainingSidebarOption {
+    }
     interface WebtrainingVideoPlayer {
         "provider": string;
         "source": any;
@@ -55,6 +61,18 @@ declare global {
         prototype: HTMLWebtrainingPersonalCardElement;
         new (): HTMLWebtrainingPersonalCardElement;
     };
+    interface HTMLWebtrainingSidebarElement extends Components.WebtrainingSidebar, HTMLStencilElement {
+    }
+    var HTMLWebtrainingSidebarElement: {
+        prototype: HTMLWebtrainingSidebarElement;
+        new (): HTMLWebtrainingSidebarElement;
+    };
+    interface HTMLWebtrainingSidebarOptionElement extends Components.WebtrainingSidebarOption, HTMLStencilElement {
+    }
+    var HTMLWebtrainingSidebarOptionElement: {
+        prototype: HTMLWebtrainingSidebarOptionElement;
+        new (): HTMLWebtrainingSidebarOptionElement;
+    };
     interface HTMLWebtrainingVideoPlayerElement extends Components.WebtrainingVideoPlayer, HTMLStencilElement {
     }
     var HTMLWebtrainingVideoPlayerElement: {
@@ -65,6 +83,8 @@ declare global {
         "my-component": HTMLMyComponentElement;
         "webtraining-button": HTMLWebtrainingButtonElement;
         "webtraining-personal-card": HTMLWebtrainingPersonalCardElement;
+        "webtraining-sidebar": HTMLWebtrainingSidebarElement;
+        "webtraining-sidebar-option": HTMLWebtrainingSidebarOptionElement;
         "webtraining-video-player": HTMLWebtrainingVideoPlayerElement;
     }
 }
@@ -94,6 +114,11 @@ declare namespace LocalJSX {
         "resume"?: string;
         "rol"?: string;
     }
+    interface WebtrainingSidebar {
+        "sidebarOpen"?: boolean;
+    }
+    interface WebtrainingSidebarOption {
+    }
     interface WebtrainingVideoPlayer {
         "provider"?: string;
         "source"?: any;
@@ -102,6 +127,8 @@ declare namespace LocalJSX {
         "my-component": MyComponent;
         "webtraining-button": WebtrainingButton;
         "webtraining-personal-card": WebtrainingPersonalCard;
+        "webtraining-sidebar": WebtrainingSidebar;
+        "webtraining-sidebar-option": WebtrainingSidebarOption;
         "webtraining-video-player": WebtrainingVideoPlayer;
     }
 }
@@ -112,6 +139,8 @@ declare module "@stencil/core" {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "webtraining-button": LocalJSX.WebtrainingButton & JSXBase.HTMLAttributes<HTMLWebtrainingButtonElement>;
             "webtraining-personal-card": LocalJSX.WebtrainingPersonalCard & JSXBase.HTMLAttributes<HTMLWebtrainingPersonalCardElement>;
+            "webtraining-sidebar": LocalJSX.WebtrainingSidebar & JSXBase.HTMLAttributes<HTMLWebtrainingSidebarElement>;
+            "webtraining-sidebar-option": LocalJSX.WebtrainingSidebarOption & JSXBase.HTMLAttributes<HTMLWebtrainingSidebarOptionElement>;
             "webtraining-video-player": LocalJSX.WebtrainingVideoPlayer & JSXBase.HTMLAttributes<HTMLWebtrainingVideoPlayerElement>;
         }
     }
