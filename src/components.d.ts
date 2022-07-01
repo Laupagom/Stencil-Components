@@ -20,6 +20,10 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface WebtrainingButton {
+        "primary": boolean;
+        "value": string;
+    }
     interface WebtrainingPersonalCard {
         "firstName": string;
         "lastName": string;
@@ -39,6 +43,12 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLWebtrainingButtonElement extends Components.WebtrainingButton, HTMLStencilElement {
+    }
+    var HTMLWebtrainingButtonElement: {
+        prototype: HTMLWebtrainingButtonElement;
+        new (): HTMLWebtrainingButtonElement;
+    };
     interface HTMLWebtrainingPersonalCardElement extends Components.WebtrainingPersonalCard, HTMLStencilElement {
     }
     var HTMLWebtrainingPersonalCardElement: {
@@ -53,6 +63,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
+        "webtraining-button": HTMLWebtrainingButtonElement;
         "webtraining-personal-card": HTMLWebtrainingPersonalCardElement;
         "webtraining-video-player": HTMLWebtrainingVideoPlayerElement;
     }
@@ -72,6 +83,10 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface WebtrainingButton {
+        "primary"?: boolean;
+        "value"?: string;
+    }
     interface WebtrainingPersonalCard {
         "firstName"?: string;
         "lastName"?: string;
@@ -85,6 +100,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "my-component": MyComponent;
+        "webtraining-button": WebtrainingButton;
         "webtraining-personal-card": WebtrainingPersonalCard;
         "webtraining-video-player": WebtrainingVideoPlayer;
     }
@@ -94,6 +110,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "webtraining-button": LocalJSX.WebtrainingButton & JSXBase.HTMLAttributes<HTMLWebtrainingButtonElement>;
             "webtraining-personal-card": LocalJSX.WebtrainingPersonalCard & JSXBase.HTMLAttributes<HTMLWebtrainingPersonalCardElement>;
             "webtraining-video-player": LocalJSX.WebtrainingVideoPlayer & JSXBase.HTMLAttributes<HTMLWebtrainingVideoPlayerElement>;
         }
